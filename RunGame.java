@@ -32,11 +32,12 @@ public class RunGame {
 
     public static void endGame() {
         Scanner sc = new Scanner(System.in);
-        String continueGame = sc.nextLine();
 
         System.out.println("Would you like to play another game?");
+        String continueGame = sc.nextLine();
+        System.out.println();
 
-        if (continueGame.toLowerCase() == "y") {
+        if (continueGame.toLowerCase().equals("y")) {
             gameChoice();
         }
         else {

@@ -12,7 +12,15 @@ public class Message {
     }
 
     public static void playerChoice(Player player) {
-        System.out.println("Player " + player.getMark() + "  Enter your move: ");
+        System.out.println("Player " + player.getMark() + "  Enter your move");
+    }
+
+    public static void congratulation(Player player) {
+        System.out.println("Congratulations! Player " +  player.getMark() + " wins!\n");
+    }
+
+    public static void drawGame() {
+        System.out.println("It's a tie!\n");
     }
     
 }
