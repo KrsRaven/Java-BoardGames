@@ -14,18 +14,13 @@ class Board {
         this.board = new Cell[size][size];
         for (int i=0; i<boardSize; i++) {
             for (int j=0; j<boardSize; j++) {
-                this.board[i][j] = ' ';
+                this.board[i][j] = new Cell();
             }
         }
     }
 
-    // Change certain cell of the game board
-    public void setMark(char mark, int row, int col) {
-        board[row][col] = mark;
-    }
-
     // Accessor methods for getting board and size
-    public char[][] getBoard() {
+    public Cell[][] getBoard() {
         return this.board;
     }
 
