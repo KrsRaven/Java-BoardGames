@@ -1,7 +1,7 @@
 class Board {
 
     private int boardSize;
-    private char[][] board;
+    private Cell[][] board;
     
     // Build a square game board with a size of [size]x[size]
     public Board (int size) {
@@ -11,7 +11,7 @@ class Board {
 
     // Creating a blank new board
     public void newBoard (int size) {
-        this.board = new char[size][size];
+        this.board = new Cell[size][size];
         for (int i=0; i<boardSize; i++) {
             for (int j=0; j<boardSize; j++) {
                 this.board[i][j] = ' ';
