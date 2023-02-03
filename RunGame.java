@@ -24,6 +24,10 @@ public class RunGame {
             else if (input == 2) {
                 System.out.println("This game is not available for now. Please make another choice.\n");
             }
+            else if (input == 3) {
+                System.out.println("Bye!\n");
+                break;
+            }
             else{
                 System.out.println("Invalid choice. Please try again.\n");
             }
@@ -33,7 +37,7 @@ public class RunGame {
     public static void endGame() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Would you like to play another game?");
+        System.out.println("Would you like to play another game? Press 'Y' for continue, press any other key to exit.");
         String continueGame = sc.nextLine();
         System.out.println();
 
