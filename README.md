@@ -53,11 +53,11 @@ Your choice:
 
 
 +---+---+---+<br>
-|&emsp;|&emsp;|&emsp;|<br>
+|&emsp;&emsp;|&emsp;&emsp;|&emsp;&emsp;|<br>
 +---+---+---+<br>
-|&emsp;|&emsp;|&emsp;|<br>
+|&emsp;&emsp;|&emsp;&emsp;|&emsp;&emsp;|<br>
 +---+---+---+<br>
-|&emsp;|&emsp;|&emsp;<br>
+|&emsp;&emsp;|&emsp;&emsp;|&emsp;&emsp;|<br>
 +---+---+---+<br>
 
 
