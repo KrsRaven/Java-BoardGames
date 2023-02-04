@@ -37,7 +37,8 @@ java -cp bin Main
 ## Input/Output Example
 
 #### Output
-Welcome to the Board Game Center!<br>
+<pre>
+Welcome to the Board Game Center!
 Please enter the number of the game you want to play, or exit the program.
 
 1. Tic-Tac-Toe
@@ -45,23 +46,202 @@ Please enter the number of the game you want to play, or exit the program.
 3. Exit
 
 Your choice:
+</pre>
 
 #### Input
-  1
+<pre>
+1
+</pre>
+  
 #### Output
-  Welcome to Tic-Tac-Toe!
-
-
-+---+---+---+<br>
-|&emsp;&emsp;|&emsp;&emsp;|&emsp;&emsp;|<br>
-+---+---+---+<br>
-|&emsp;&emsp;|&emsp;&emsp;|&emsp;&emsp;|<br>
-+---+---+---+<br>
-|&emsp;&emsp;|&emsp;&emsp;|&emsp;&emsp;|<br>
-+---+---+---+<br>
-
+<pre>
+Welcome to Tic-Tac-Toe!
+  
++---+---+---+
+|   |   |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+|   |   |   |
++---+---+---+
 
 Player O ENTER YOUR MOVE
 Enter Row [0-2]: 
+</pre>
 
+#### Input
+<pre>
+1
+</pre>
+
+#### Output
+<pre>
+Enter Column [0-2]: 
+</pre>
+
+#### Input
+<pre>
+1
+</pre>
+
+#### Output
+
+<pre>
++---+---+---+
+|   |   |   |
++---+---+---+
+|   | O |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+
+Player X ENTER YOUR MOVE
+Enter Row [0-2]: 
+</pre>
+
+#### Input
+<pre>
+0
+</pre>
+
+#### Output
+<pre>
+Enter Column [0-2]: 
+</pre>
   
+#### Input
+<pre>
+1
+</pre>
+  
+#### Output
+
+<pre>
++---+---+---+
+|   | X |   |
++---+---+---+
+|   | O |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+
+Player O ENTER YOUR MOVE
+Enter Row [0-2]: 
+</pre>
+  
+#### Input
+<pre>
+0
+</pre>
+  
+#### Output
+<pre>
+Enter Column [0-2]: 
+</pre>
+  
+#### Input
+<pre>
+2
+</pre>
+
+#### Output
+
+<pre>
++---+---+---+
+|   | X | O |
++---+---+---+
+|   | O |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+
+Player X ENTER YOUR MOVE
+Enter Row [0-2]: 
+</pre>
+  
+#### Input
+<pre>
+0
+</pre>
+  
+#### Output
+<pre>
+Enter Column [0-2]: 
+</pre>
+  
+#### Input
+<pre>
+0
+</pre>
+  
+#### Output
+
+<pre>
++---+---+---+
+| X | X | O |
++---+---+---+
+|   | O |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+
+Player O ENTER YOUR MOVE
+Enter Row [0-2]: 
+</pre>
+  
+#### Input
+<pre>
+2
+</pre>
+  
+#### Output
+<pre>
+Enter Column [0-2]: 
+</pre>
+  
+#### Input
+<pre>
+0
+</pre>
+  
+#### Output
+
+<pre>
++---+---+---+
+| X | X | O |
++---+---+---+
+|   | O |   |
++---+---+---+
+| O |   |   |
++---+---+---+
+
+Congratulations! Player O wins!
+
+Would you like to play another game? Press 'Y' for continue, press any other key to exit.
+</pre>
+
+#### Input
+<pre>
+y
+</pre>
+ 
+#### Output
+<pre>
+Please enter the number of the game you want to play, or exit the program.
+
+1. Tic-Tac-Toe
+2. Coming soon...
+3. Exit
+
+Your choice:
+</pre>
+
+#### Input
+<pre>
+3
+</pre>
+
+#### Output
+<pre>
+Bye!
+</pre>
