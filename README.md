@@ -52,13 +52,13 @@ Your choice:
   Welcome to Tic-Tac-Toe!
 
 
-+---+---+---+
-|   |   |   |
-+---+---+---+
-|   |   |   |
-+---+---+---+
-|   |   |   |
-+---+---+---+
++---+---+---+<br>
+|&emsp;|&emsp;|&emsp;|<br>
++---+---+---+<br>
+|&emsp;|&emsp;|&emsp;|<br>
++---+---+---+<br>
+|&emsp;|&emsp;|&emsp;<br>
++---+---+---+<br>
 
 
 Player O ENTER YOUR MOVE
