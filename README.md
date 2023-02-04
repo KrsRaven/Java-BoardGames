@@ -1,9 +1,8 @@
-# CS611-<Assignment 1>
-## <Assignment Tic Tac Toe>
+# CS611 Assignment 1
 ---------------------------------------------------------------------------
-Claire Fan<br>
-jfan22@bu.edu<br>
-U80694562<br>
+Name: Claire Fan<br>
+Email: jfan22@bu.edu<br>
+Student ID: U80694562<br>
 
 ## Files
 ---------------------------------------------------------------------------
