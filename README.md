@@ -37,7 +37,7 @@ java -cp bin Main
 ## Input/Output Example
 
 #### Output
-Welcome to the Board Game Center!
+Welcome to the Board Game Center!<br>
 Please enter the number of the game you want to play, or exit the program.
 
 1. Tic-Tac-Toe
@@ -45,3 +45,23 @@ Please enter the number of the game you want to play, or exit the program.
 3. Exit
 
 Your choice:
+
+#### Input
+  1
+#### Output
+  Welcome to Tic-Tac-Toe!
+
+
++---+---+---+
+|   |   |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+
+
+Player O ENTER YOUR MOVE
+Enter Row [0-2]: 
+
+  
