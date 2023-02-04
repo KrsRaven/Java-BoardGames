@@ -36,7 +36,7 @@ java -cp bin Main
 
 ## Input/Output Example
 
-####Output:
+###Output
 Welcome to the Board Game Center!
 Please enter the number of the game you want to play, or exit the program.
 
