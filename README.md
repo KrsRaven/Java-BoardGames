@@ -7,33 +7,39 @@
 ## Files
 
 ### 1. START.java<br>
-- This file contains a main method
+- This file contains a main method which is used to run the board game program.
 ### 2. RunGame.java
-- ss
+- This class controls the game process, including methods that start/end the game.
 ### 3. TTT.java
-- ss
-### 4. Message.java
-- ss
-### 5. Board.java
-- ss
-### 6. Cell.java
-- ss
+- This class includes the Tic-Tac-Toe game process.
+- The TTT class helps two players to take turns.
+### 4. Player.java
+- This class stores information of game players.
+- Method for each player to enter a move is included in this class.
+- Method that check whether there is a winner is included in this class.
+### 5. Message.java
+- This class contains static methods that display message shown in the game process.
+### 6. Board.java
+- This class initializes game boards (custom size allowed).
+- Methods for checking whether a position is valid/the board is full.
+### 7. Cell.java
+- This class initializes cells as individual objects.
 
 ## Notes
 
-1. <Files to be parsed should be stored in ConfigFiles, for parser class to
-read class>
-2. <Bonus Done>
-3. <Notes to grader>
+1. Rules: 3x3 board, two players (Player O starts first), winning by 3 in a row.
+2. This program may be extended for more games (but I have not actually inplemented other games :(
 
 ## How to compile and run
 
-1. Navigate to the directory "pa1" after unzipping the files
-2. Run the following instructions:
-<Example below>
-javac -d bin src/*.java
-java -cp bin Main
-
+1. Download all files into one folder.
+2. Navigate to the folder in Terminal.
+3. Run the following instructions:
+<pre>
+javac START.java
+java START
+</pre>
+  
 ## Input/Output Example
 
 #### Output
