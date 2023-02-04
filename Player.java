@@ -44,7 +44,7 @@ class Player {
                 }
             }
 
-            if (count == 3) {
+            if (count == board.getBoardSize()) {
                 isWin = true;
             }
         }
@@ -59,7 +59,7 @@ class Player {
                 }
             }
 
-            if (count == 3) {
+            if (count == board.getBoardSize()) {
                 isWin = true;
             }
         }
@@ -72,7 +72,7 @@ class Player {
                 count++;
             }
         }
-        if (count == 3) {
+        if (count == board.getBoardSize()) {
             isWin = true;
         }
 
@@ -85,7 +85,7 @@ class Player {
             }
 
         }
-        if (count == 3) {
+        if (count == board.getBoardSize()) {
             isWin = true;
         }
 
