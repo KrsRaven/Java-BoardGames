@@ -36,5 +36,12 @@ java -cp bin Main
 
 ## Input/Output Example
 
-<Place here an example of how the program runs. Include both its
-outputs and correctly formatted inputs. Please clearly mark the inputs.>
+####Output:
+Welcome to the Board Game Center!
+Please enter the number of the game you want to play, or exit the program.
+
+1. Tic-Tac-Toe
+2. Coming soon...
+3. Exit
+
+Your choice:
