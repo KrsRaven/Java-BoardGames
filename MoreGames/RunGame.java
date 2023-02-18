@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class RunGame {
+    private int gamePlayed;
 
     public static void startNewGame() {
         Message.welcome();

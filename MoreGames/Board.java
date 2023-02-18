@@ -1,5 +1,10 @@
 class Board {
-
+/*
+ * This class is designed for creating a game board constructed 
+ * by Cell objects. Methods for checking whether a cell is a valid
+ * choice, whether the board is full and for printing the board in the 
+ * terminal are in this class.
+ */
     private int boardSize;
     private Cell[][] board;
     private int row;
@@ -13,7 +18,7 @@ class Board {
         this.col = size;
     }
 
-    // Creating a blank new board
+    // Creating a blank new board with numbers of rows and columns as arguments
     public void newBoard (int row, int col) {
         this.board = new Cell[row][col];
         for (int i=0; i<boardSize; i++) {
@@ -71,18 +76,26 @@ class Board {
 
     // Printing the board out in the terminal
     public void printBoard() {
+        // Print the column numbers
+        System.out.print("   ");
+        for (int numcol=0; numcol<this.col; numcol++){
+            System.out.print(" [" + numcol + "]");
+        }
         System.out.println();
 
-        for (int i=0; i<this.boardSize; i++){
+        for (int i=0; i<this.row; i++){
+            System.out.print("   ");
 
             // Print the horizontal line for each row
-            for (int j=0; j<this.boardSize; j++) {
+            for (int j=0; j<this.col; j++) {
                 System.out.print("+---");
             }
             System.out.print("+"+"\n");
+            // Print the row numbers
+            System.out.print("[" + i + "]");
 
             // Print the vertical lines for each column
-            for (int k=0; k<this.boardSize; k++) {
+            for (int k=0; k<this.col; k++) {
                 System.out.print("| ");
 
                 // Print the cell content out
@@ -92,7 +105,8 @@ class Board {
         }
 
         // Finish the lower bound of the board
-        for (int j=0; j<this.boardSize; j++) {
+        System.out.print("   ");
+        for (int j=0; j<this.col; j++) {
             System.out.print("+---");
         }
 

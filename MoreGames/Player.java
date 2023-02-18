@@ -4,14 +4,17 @@ class Player {
     
     private int playerNum;
     private char playerMark;
+    private int numWins;
 
     // Constructors
     public Player(){
         this.playerNum = 0;
+        this.numWins = 0;
     }
 
     public Player(int num){
         this.playerNum = num;
+        this.numWins = 0;
     }
     
     // Accessors
@@ -21,6 +24,10 @@ class Player {
 
     public char getMark(){
         return this.playerMark;
+    }
+
+    public int getWins(){
+        return this.numWins;
     }
 
     // Method for set player variables
