@@ -1,69 +1,32 @@
 import java.util.Scanner;
 
-public class TTT {
+public class TTT{
 
-    // Check if there is a winner
-    public static Boolean isWin(Board board, Player player) {
-        Boolean isWin = false;
+    private Board board;
+    private int numPlayers;
+    private int rule;
+    private int numGame;
+    private int[] record;
 
-        int count = 0;
+    // Default constructor for a new Tic Tac Toe game
+    public TTT() {
+        this.numGame = 0;
+    }
 
-        // Check row win condition
-        for (int i=0; i<board.getRow(); i++) {
-            count = 0;
+    public int getNumGame() {
+        return this.numGame;
+    }
 
-            for (int j=0; j<board.getCol(); j++) {
-                if (board.getCell(i, j).getMark() == player.getMark()) {
-                    count++;
-                }
-            }
+    public Board getBoard() {
+        return this.board;
+    }
 
-            if (count == board.getBoardSize()) {
-                isWin = true;
-            }
-        }
+    public void setBoard(int row, int col) {
+        this.board = new Board(row, col);
+    }
 
-        // Check column win condition
-        for (int j=0; j<board.getCol(); j++) {
-            count = 0;
-
-            for (int i=0; i<board.getRow(); i++) {
-                if (board.getCell(i, j).getMark() == player.getMark()) {
-                    count++;
-                }
-            }
-
-            if (count == board.getBoardSize()) {
-                isWin = true;
-            }
-        }
-
-        // Check diagonal win condition
-        count = 0;
-        for (int i=0; i<board.getBoardSize(); i++) {
-    
-            if (board.getCell(i, i).getMark() == player.getMark()) {
-                count++;
-            }
-        }
-        if (count == board.getBoardSize()) {
-            isWin = true;
-        }
-
-        // Check anti diagonal win condition
-        count = 0;
-        for (int i=0, j=board.getCol()-1; i<board.getRow() && j>=0; i++, j--) {
-
-            if (board.getCell(i, j).getMark() == player.getMark()) {
-                count++;
-            }
-
-        }
-        if (count == board.getBoardSize()) {
-            isWin = true;
-        }
-
-        return isWin;
+    public void setRule(int rule) {
+        this.rule = rule;
     }
 
     public static void startGame() {
@@ -74,36 +37,51 @@ public class TTT {
         player0.setPlayerMark('O');
         player1.setPlayerMark('X');
 
-        Board TTTBoard = new Board(3);
+        TTT newGame = new TTT();
 
         System.out.println("Welcome to Tic-Tac-Toe!\n");
-        TTTBoard.printBoard();
+        System.out.println("Please enter the size of the game board.\n");
+        System.out.println("Number of rows: ");
+        
+        int row = sc.nextInt();
+
+        System.out.println("Number of columns: ");
+        int col = sc.nextInt();
+
+        newGame.setBoard(row, col);
+
+        System.out.println("\nPlease enter your desired winning condition.");
+        System.out.println("(Example: Enter 3 for a Three-in-a-Row winning condition.)");
+
+        newGame.setRule(sc.nextInt());
+    
+        newGame.board.printBoard();
         System.out.println();
 
         while (true) {
             Message.playerChoice(player0);
-            player0.placeMark(TTTBoard);
-            TTTBoard.printBoard();
+            player0.placeMark(newGame.board);
+            newGame.board.printBoard();
 
-            if (isWin(TTTBoard, player0) == true) {
+            if (Board.isWin(newGame.board, newGame.rule) == true) {
                 Message.congratulation(player0);
                 break;
             }
-            if (TTTBoard.isFull() == true) {
+            if (newGame.board.isFull() == true) {
                 Message.drawGame();
                 break;
             }
 
             Message.playerChoice(player1);
-            player1.placeMark(TTTBoard);
-            TTTBoard.printBoard();
+            player1.placeMark(newGame.board);
+            newGame.board.printBoard();
 
-            if (isWin(TTTBoard, player1) == true) {
+            if (Board.isWin(newGame.board, newGame.rule) == true) {
                 Message.congratulation(player1);
                 break;
             }
             
-            if (TTTBoard.isFull() == true) {
+            if (newGame.board.isFull() == true) {
                 Message.drawGame();
                 break;
             }

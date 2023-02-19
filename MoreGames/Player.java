@@ -3,6 +3,7 @@ import java.util.Scanner;
 class Player {   
     
     private int playerNum;
+    private String name;
     private char playerMark;
     private int numWins;
 
@@ -22,6 +23,10 @@ class Player {
         return this.playerNum;
     }
 
+    public String getName(){
+        return this.name;
+    }
+
     public char getMark(){
         return this.playerMark;
     }
@@ -35,14 +40,18 @@ class Player {
         this.playerMark = m;
     }
 
+    public void setPlayerName(String name) {
+        this.name = name;
+    }
+
     // Method for players to make a choice
     public void placeMark(Board currentBoard) {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Enter Row [0-" + (currentBoard.getBoardSize()-1) + "]: ");
+            System.out.println("Enter Row [0-" + (currentBoard.getRow()-1) + "]: ");
             int row = sc.nextInt();
-            System.out.println("Enter Column [0-" + (currentBoard.getBoardSize()-1) + "]: ");
+            System.out.println("Enter Column [0-" + (currentBoard.getCol()-1) + "]: ");
             int col = sc.nextInt();
             System.out.println();
 
