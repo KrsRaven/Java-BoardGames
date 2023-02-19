@@ -5,7 +5,7 @@ public class Message {
     }
 
     public static void displayMenu() {
-        System.out.println("Please enter the number of the game you want to play, or exit the program.\n");
+        System.out.println("\nPlease enter the number of the game you want to play, or exit the program.\n");
         System.out.println("1. Tic-Tac-Toe");
         System.out.println("2. Coming soon...");
         System.out.println("3. Exit");
@@ -13,11 +13,11 @@ public class Message {
     }
 
     public static void playerChoice(Player player) {
-        System.out.println("Player " + player.getMark() + " ENTER YOUR MOVE");
+        System.out.println("" + player.getName() + ", ENTER YOUR MOVE");
     }
 
     public static void congratulation(Player player) {
-        System.out.println("Congratulations! Player " +  player.getMark() + " wins!\n");
+        System.out.println("Congratulations! "+  player.getName() + " wins!\n");
     }
 
     public static void drawGame() {

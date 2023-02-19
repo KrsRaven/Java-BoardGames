@@ -1,21 +1,22 @@
 import java.util.Scanner;
+import java.util.Hashtable;
 
 class Player {   
     
     private int playerNum;
     private String name;
     private char playerMark;
-    private int numWins;
+    private Hashtable<String, Integer> wins;
 
     // Constructors
     public Player(){
         this.playerNum = 0;
-        this.numWins = 0;
+        this.wins = new Hashtable<String, Integer>();
     }
 
     public Player(int num){
         this.playerNum = num;
-        this.numWins = 0;
+        this.wins = new Hashtable<String, Integer>();
     }
     
     // Accessors
@@ -31,8 +32,8 @@ class Player {
         return this.playerMark;
     }
 
-    public int getWins(){
-        return this.numWins;
+    public Hashtable<String, Integer> getWins() {
+        return this.wins;
     }
 
     // Method for set player variables
@@ -42,6 +43,14 @@ class Player {
 
     public void setPlayerName(String name) {
         this.name = name;
+    }
+
+    public void setWins(String game, int score) {
+        this.wins.put(game, score);
+    }
+
+    public void addWins(String game) {
+        this.wins.put(game, this.wins.get(game)+1);
     }
 
     // Method for players to make a choice

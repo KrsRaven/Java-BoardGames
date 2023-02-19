@@ -3,22 +3,26 @@ import java.util.Scanner;
 public class TTT{
 
     private Board board;
-    private int numPlayers;
     private int rule;
-    private int numGame;
-    private int[] record;
+    
+    private Player player0;
+    private Player player1;
 
     // Default constructor for a new Tic Tac Toe game
-    public TTT() {
-        this.numGame = 0;
-    }
-
-    public int getNumGame() {
-        return this.numGame;
+    public TTT(Player player0, Player player1) {
+        this.player0 = player0;
+        this.player1 = player1;
+        player0.setPlayerMark('O');
+        player1.setPlayerMark('X');
     }
 
     public Board getBoard() {
         return this.board;
+    }
+
+    public void setPlayers(Player player0, Player player1) {
+        this.player0 = player0;
+        this.player1 = player1;
     }
 
     public void setBoard(int row, int col) {
@@ -29,21 +33,15 @@ public class TTT{
         this.rule = rule;
     }
 
-    public static void startGame() {
+    public static void startGame(TTT newGame) {
         Scanner sc = new Scanner(System.in);
 
-        Player player0 = new Player(0);
-        Player player1 = new Player(1);
-        player0.setPlayerMark('O');
-        player1.setPlayerMark('X');
-
-        TTT newGame = new TTT();
-
-        System.out.println("Welcome to Tic-Tac-Toe!\n");
+        System.out.println("Welcome to Tic-Tac-Toe!");
         System.out.println("Please enter the size of the game board.\n");
+
         System.out.println("Number of rows: ");
-        
         int row = sc.nextInt();
+        
 
         System.out.println("Number of columns: ");
         int col = sc.nextInt();
@@ -59,12 +57,13 @@ public class TTT{
         System.out.println();
 
         while (true) {
-            Message.playerChoice(player0);
-            player0.placeMark(newGame.board);
+            Message.playerChoice(newGame.player0);
+            newGame.player0.placeMark(newGame.board);
             newGame.board.printBoard();
 
             if (Board.isWin(newGame.board, newGame.rule) == true) {
-                Message.congratulation(player0);
+                Message.congratulation(newGame.player0);
+                newGame.player0.addWins("Tic-Tac-Toe");
                 break;
             }
             if (newGame.board.isFull() == true) {
@@ -72,12 +71,13 @@ public class TTT{
                 break;
             }
 
-            Message.playerChoice(player1);
-            player1.placeMark(newGame.board);
+            Message.playerChoice(newGame.player1);
+            newGame.player1.placeMark(newGame.board);
             newGame.board.printBoard();
 
             if (Board.isWin(newGame.board, newGame.rule) == true) {
-                Message.congratulation(player1);
+                Message.congratulation(newGame.player1);
+                newGame.player1.addWins("Tic-Tac-Toe");
                 break;
             }
             
@@ -86,7 +86,7 @@ public class TTT{
                 break;
             }
         }
-        RunGame.endGame();
+        RunGame.endGame(newGame.player0, newGame.player1);
     }
     
 }
