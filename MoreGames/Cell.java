@@ -1,11 +1,17 @@
 class Cell {
 
+    /*
+     * This class is designed for creating a single cell (a square in the board)
+     * as an object. Properties of a celling include the mark inside the cell and 
+     * whether it is filled by a player.
+     */
+
     private char mark;
     private boolean filled;
     
     /*  A default constructor initializing a black cell, 
-    *   and a constructor creating a cell with the mark as argument
-    */
+     *  and a constructor creating a cell with the mark as argument
+     */
     public Cell() {
         this.mark = ' ';
         this.filled = false;

@@ -1,7 +1,16 @@
 import java.util.Scanner;
 import java.util.Hashtable;
 
-class Player {   
+class Player {
+    
+    /*
+     * This class is designed for storing and changing players' information.
+     * The number of a player (not seen by players), the name, mark used in game and
+     * winning records for a players are included.
+     * 
+     * Besides, the method for each player to place their mark on the board is in
+     * this class because this action is always related to a player.
+     */
     
     private int playerNum;
     private String name;

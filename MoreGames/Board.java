@@ -82,7 +82,11 @@ class Board {
         return full;
     }
 
-    // Check if there is a winner
+    /*
+     * Check if there is a winner. This method is not restricted by
+     * the size of the board or winning condition. It simply checks
+     * whether there are 'rules' of the same mark in a row, a column or diagonals.
+     */ 
     public static Boolean isWin(Board board, int rules) {
         Boolean isWin = false;
 
@@ -102,7 +106,7 @@ class Board {
                 }
                 prev = trav;
                 
-                if (count >= rules) {
+                if (count == rules) {
                     isWin = true;
                 }
             }
@@ -124,7 +128,7 @@ class Board {
                 }
                 prev = trav;
 
-                if (count >= rules) {
+                if (count == rules) {
                     isWin = true;
                 }
             }
@@ -139,7 +143,7 @@ class Board {
                 for (int k=0; k<rules; k++) {
                     if (i+k<board.getRow() && j+k<board.getCol()){
 
-                        if (board.getCell(i, j).getMark() != ' ' &&
+                        if (board.getCell(i, j).getFilled() == true &&
                         board.getCell(i, j).getMark() == board.getCell(i+k, j+k).getMark()) {
                         count++;
                         }
@@ -165,7 +169,7 @@ class Board {
                 for (int k=0; k<rules; k++) {
                     if (i-k>=0 && j+k<board.getCol()){
 
-                        if (board.getCell(i, j).getMark() != ' ' &&
+                        if (board.getCell(i, j).getFilled() == true &&
                         board.getCell(i, j).getMark() == board.getCell(i-k, j+k).getMark()) {
                         count++;
                         }
@@ -213,15 +217,13 @@ class Board {
             }
             System.out.print("|"+"\n");
         }
+            // Finish the lower bound of the board
+            System.out.print("   ");
+            for (int j=0; j<this.col; j++) {
+                System.out.print("+---");
+            }
 
-        // Finish the lower bound of the board
-        System.out.print("   ");
-        for (int j=0; j<this.col; j++) {
-            System.out.print("+---");
-        }
-
-        System.out.print("+"+"\n");     
-        System.out.println();
+            System.out.print("+"+"\n");     
+            System.out.println();
     }
-
 }
