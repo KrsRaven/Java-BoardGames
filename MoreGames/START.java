@@ -1,5 +1,10 @@
 public class START {
-    public static void main (String[] args) {
-       RunGame.startNewGame();
+    /*
+     * A main method for starting the program
+     */
+
+    public static void main (String[] args){
+        RunGame newGame = new RunGame();
+        newGame.startNewGame();
     }
 }

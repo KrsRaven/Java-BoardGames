@@ -1,15 +1,73 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RunGame {
 
-    public static void startNewGame() {
+    /*
+     * This class is designed for controlling the BEFORE and AFTER game
+     * process for all three games. Because all games share the same players,
+     * the creation of players will be controlled by this class.
+     */
+
+    Player player0;
+    Player player1;
+
+    public RunGame() {
+        this.player0 = new Player(0);
+        this.player1 = new Player(1);
+    }
+    
+    // A method for creating game boards according to player's input
+    public static List<Integer> setBoard() {
+        Scanner sc = new Scanner(System.in);
+        List<Integer> board = new ArrayList<>();
+
+        System.out.println("Please enter the size of the game board.\n");
+
+        System.out.println("Number of rows: ");
+        int row = sc.nextInt();
+        board.add(row);
+
+        System.out.println("Number of columns: ");
+        int col = sc.nextInt();
+        board.add(col);
+
+        return board;
+    }
+    
+    /*
+     * A helper method for set player's input as game rules.
+     * This method is made to be static in order to be used for
+     * all three games.
+     */
+    public static int setRule(Board board) {
+        Scanner sc = new Scanner(System.in);
+        int rule = 0;
+
+        while (true) {
+            System.out.println("\nPlease enter your desired winning condition.");
+            System.out.println("(Example: Enter 3 for a Three-in-a-Row winning condition.)");
+
+            rule = sc.nextInt();
+
+            if (rule>board.getRow() && rule>board.getCol()) {
+                System.out.println("\nToo big! Please re-enter a winning condition that is proper for the board you have created.");
+            }
+            else {
+                break;
+            }
+        }
+        return rule;
+    }
+
+    // This method works BEFORE navigating to the menu
+    public void startNewGame() {
         Scanner sc = new Scanner(System.in);
 
         Message.welcome();
 
         // Set two players for all game in a single run of the program
-        Player player0 = new Player(0);
-        Player player1 = new Player(1);
         player0.setWins("Tic-Tac-Toe", 0);
         player1.setWins("Tic-Tac-Toe", 0);
         player0.setWins("Order and Chaos", 0);
@@ -29,6 +87,7 @@ public class RunGame {
         gameChoice(player0, player1);
     }
 
+    // The menu for players to pick a game
     public static void gameChoice(Player player0, Player player1) {
         Message.displayMenu();  
         Scanner sc = new Scanner(System.in);
@@ -45,9 +104,16 @@ public class RunGame {
                 break;
             }
             else if (input == 2) {
-                System.out.println("This game is not available for now. Please make another choice.\n");
+                OAC newgame = new OAC(player0, player1);
+                OAC.startGame(newgame);
+                break;
             }
             else if (input == 3) {
+                Connect4 newgame = new Connect4(player0, player1);
+                Connect4.startGame(newgame);
+                break;
+            }
+            else if (input == 4) {
                 System.out.println("Bye!\n");
                 break;
             }
@@ -57,6 +123,7 @@ public class RunGame {
         }
     }
 
+    // This method is called AFTER a game played
     public static void endGame(Player player0, Player player1) {
         Scanner sc = new Scanner(System.in);
 

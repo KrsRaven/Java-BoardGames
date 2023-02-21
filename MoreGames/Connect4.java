@@ -1,22 +1,14 @@
 import java.util.List;
 
-public class TTT extends RunGame{
-
-    /*
-     * This class is created for the game Tic-Tac-Toe. In my implementation
-     * of TTT, there are two players, and their marks are 'X' and 'O' as default.
-     * The winning condition and board size can be changed without influencing
-     * other games.
-     */
-
+public class Connect4 extends RunGame{
     private Board board;
     private int rule;
     
     private Player player0;
     private Player player1;
 
-    // Default constructor for a new Tic Tac Toe game
-    public TTT(Player player0, Player player1) {
+    // Default constructor for a new Connect-4 game
+    public Connect4(Player player0, Player player1) {
         this.player0 = player0;
         this.player1 = player1;
         player0.setPlayerMark('O');
@@ -38,8 +30,8 @@ public class TTT extends RunGame{
     }
 
     // The method for controlling the main process of a Tic-Tac-Toe game
-    public static void startGame(TTT newGame) {
-        System.out.println("Welcome to Tic-Tac-Toe!");
+    public static void startGame(Connect4 newGame) {
+        System.out.println("Welcome to Connect-4!");
         
         List<Integer> boardSize = RunGame.setBoard();
         newGame.setBoard(boardSize.get(0), boardSize.get(1));
@@ -51,12 +43,12 @@ public class TTT extends RunGame{
 
         while (true) {
             Message.playerChoice(newGame.player0);
-            newGame.player0.placeMark(newGame.board);
+            newGame.player0.placeMarkCol((newGame.board));;
             newGame.board.printBoard();
 
             if (Board.isWin(newGame.board, newGame.rule) == true) {
                 Message.congratulation(newGame.player0);
-                newGame.player0.addWins("Tic-Tac-Toe");
+                newGame.player0.addWins("Connect-4");
                 break;
             }
             if (newGame.board.isFull() == true) {
@@ -65,12 +57,12 @@ public class TTT extends RunGame{
             }
 
             Message.playerChoice(newGame.player1);
-            newGame.player1.placeMark(newGame.board);
+            newGame.player1.placeMarkCol(newGame.board);
             newGame.board.printBoard();
 
             if (Board.isWin(newGame.board, newGame.rule) == true) {
                 Message.congratulation(newGame.player1);
-                newGame.player1.addWins("Tic-Tac-Toe");
+                newGame.player1.addWins("Connect-4");
                 break;
             }
             

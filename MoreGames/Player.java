@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Currency;
 import java.util.Hashtable;
 
 class Player {
@@ -13,6 +14,7 @@ class Player {
      */
     
     private int playerNum;
+    private int order;
     private String name;
     private char playerMark;
     private Hashtable<String, Integer> wins;
@@ -33,6 +35,10 @@ class Player {
         return this.playerNum;
     }
 
+    public int getOrder() {
+        return this.order;
+    }
+
     public String getName(){
         return this.name;
     }
@@ -50,6 +56,10 @@ class Player {
         this.playerMark = m;
     }
 
+    public void setOrder(int order) {
+        this.order = order;
+    }
+
     public void setPlayerName(String name) {
         this.name = name;
     }
@@ -60,6 +70,34 @@ class Player {
 
     public void addWins(String game) {
         this.wins.put(game, this.wins.get(game)+1);
+    }
+
+    /* 
+     * Method for a player to choose their mark for the current turn,
+     * mainly used in Order and Chaos because this game allow one player
+     * use different marks
+     */
+    public void chooseMark() {
+        Scanner sc = new Scanner(System.in);
+        char mark = ' ';
+        
+        while (true) {
+            System.out.println(this.name + ", please pick a mark to place. (X OR O)");
+            String input = sc.nextLine().toUpperCase();
+            mark = input.charAt(0);
+
+            if(mark == 'O') {
+                this.setPlayerMark('O');
+                break;
+            }
+            else if(mark == 'X') {
+                this.setPlayerMark('X');
+                break;
+            }
+            else {
+                System.out.println("Please pick between X and O.\n");
+            }
+        }  
     }
 
     // Method for players to make a choice
@@ -79,6 +117,33 @@ class Player {
             else {
                 currentBoard.getCell(row, col).setMark(playerMark);
                 break;
+            }
+        }
+    }
+
+    // Method for players to make a choice - a version especially for Connect-4
+    public void placeMarkCol(Board currentBoard) {
+        Scanner sc = new Scanner(System.in);
+        boolean marked = false;
+
+        while (true) {
+            System.out.println("Enter Column [0-" + (currentBoard.getCol()-1) + "]: ");
+            int col = sc.nextInt();
+            System.out.println();
+
+            for (int i=currentBoard.getRow()-1; i>=0; i--) {
+                if (!currentBoard.getCell(i, col).getFilled()) {
+                    currentBoard.getCell(i, col).setMark(playerMark);
+                    marked = true;
+                    break;
+                }
+            }
+
+            if (marked) {
+                break;
+            }
+            else{
+                System.out.println("Oops! This columns has no more space. Please pick another column.");
             }
         }
     }
