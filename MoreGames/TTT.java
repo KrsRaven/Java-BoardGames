@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class TTT extends RunGame{
+public class TTT{
 
     /*
      * This class is created for the game Tic-Tac-Toe. In my implementation

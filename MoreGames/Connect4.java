@@ -1,6 +1,14 @@
 import java.util.List;
 
-public class Connect4 extends RunGame{
+public class Connect4 {
+    
+    /*
+     * This class is created for the game Connect-4. In my implementation
+     * of the game, there are two players, and their marks are 'X' and 'O' as default.
+     * The winning condition and board size can be changed without influencing
+     * other games.
+     */
+
     private Board board;
     private int rule;
     
@@ -29,7 +37,7 @@ public class Connect4 extends RunGame{
         this.rule = rule;
     }
 
-    // The method for controlling the main process of a Tic-Tac-Toe game
+    // The method for controlling the main process of a Connect-4 game
     public static void startGame(Connect4 newGame) {
         System.out.println("Welcome to Connect-4!");
         

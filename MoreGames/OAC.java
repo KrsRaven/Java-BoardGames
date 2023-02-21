@@ -1,7 +1,15 @@
 import java.util.List;
 import java.util.Scanner;
 
-public class OAC extends RunGame{
+public class OAC {
+
+    /*
+     * This class is created for the game Order and Chaos. In my implementation
+     * of the game, there are two players, and their marks can be
+     * chosen from 'X' and 'O' in each turn.
+     * The winning condition and board size can be changed without influencing
+     * other games.
+     */
 
     private Board board;
     private int rule;
@@ -9,7 +17,7 @@ public class OAC extends RunGame{
     private Player player0;
     private Player player1;
 
-    // Default constructor for a new Tic Tac Toe game
+    // Default constructor for a new game
     public OAC(Player player0, Player player1) {
         this.player0 = player0;
         this.player1 = player1;
@@ -56,7 +64,7 @@ public class OAC extends RunGame{
         }
     }
 
-    // The method for controlling the main process of a Tic-Tac-Toe game
+    // The method for controlling the main process of a OAC game
     public static void startGame(OAC newGame) {
         System.out.println("Welcome to Order and Chaos!");
 

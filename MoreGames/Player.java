@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Currency;
 import java.util.Hashtable;
 
 class Player {
