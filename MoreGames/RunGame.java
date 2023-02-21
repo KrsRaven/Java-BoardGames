@@ -10,8 +10,8 @@ public class RunGame {
      * the creation of players will be controlled by this class.
      */
 
-    Player player0;
-    Player player1;
+    private Player player0;
+    private Player player1;
 
     public RunGame() {
         this.player0 = new Player(0);

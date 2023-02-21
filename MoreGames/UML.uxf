@@ -1,0 +1,97 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>4</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>252</x><y>60</y><w>52</w><h>24</h></coordinates><panel_attributes>_START_
+--
+ +  main()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>224</x><y>108</y><w>104</w><h>56</h></coordinates><panel_attributes>RunGame
+--
+ - Player player 0
+ - Player player 1
+--
++ RunGame()
+...
++ startNewGame()
++ gameChoice(Player player0, Player player1)
++ endGame(Player player0, Player player1)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>156</x><y>204</y><w>72</w><h>64</h></coordinates><panel_attributes>TTT
+--
+- Board board
+- int rule
+- Player player0
+- Player player1
+--
++ getBoard(): Board
++ setBoard()
+...
++ startGame(TTT newGame)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>248</x><y>204</y><w>72</w><h>64</h></coordinates><panel_attributes>OAC
+--
+- Board board
+- int rule
+- Player player0
+- Player player1
+--
++ getBoard(): Board
++ setBoard()
+...
++ startGame(TTT newGame)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>348</x><y>204</y><w>72</w><h>64</h></coordinates><panel_attributes>Connect4
+--
+- Board board
+- int rule
+- Player player0
+- Player player1
+--
++ getBoard(): Board
++ setBoard()
+...
++ startGame(TTT newGame)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>316</x><y>276</y><w>40</w><h>32</h></coordinates><panel_attributes>Message
+--
++ welcome()
++ displayMenu()
+...</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>224</x><y>300</y><w>76</w><h>64</h></coordinates><panel_attributes>Board
+--
+- int boardSize
+- Cell [][] board
+- int row
+- int col
+--
+...
++ isValid (int row, int col)
++ isFull()
++ isWin(Board board, int rules)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>348</x><y>332</y><w>44</w><h>44</h></coordinates><panel_attributes>Cell
+--
+- char mark
+- boolean filled
+--
++ getMark()
++ getFilled()
+...</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>296</x><y>340</y><w>60</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>272</x><y>80</y><w>12</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>276</x><y>160</y><w>20</w><h>52</h></coordinates><panel_attributes>m1=1
+m2=0..n
+</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>184</x><y>160</y><w>48</w><h>52</h></coordinates><panel_attributes>m1=1
+m2=0..n
+</panel_attributes><additional_attributes>100;10;10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>324</x><y>156</y><w>68</w><h>56</h></coordinates><panel_attributes>m1=1
+m2=0..n
+</panel_attributes><additional_attributes>10;20;130;20;130;120</additional_attributes></element><element><id>Relation</id><coordinates><x>184</x><y>264</y><w>48</w><h>84</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>100;180;10;180;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>264</y><w>16</w><h>44</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>296</x><y>264</y><w>96</w><h>68</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;140;220;140;220;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>452</x><y>172</y><w>272</w><h>120</h></coordinates><panel_attributes>
+									For my program of the three board games, the Cell and Board objects are working as the base element.
+  Beyond that, a Player class controls the creation of players in one run of the program. Each of the three games
+  (Tic-Tac-Toe, Order and Chaos and Connect-4) has their own class which initializes boards for the game. Each 
+  of the game classes has a method to help players to take turns. Beyond that, a RunGame class takes responsibility
+  for the processes BEFORE and AFTER one game, which including two Player objects. Finally, the START class contains
+  a main method which is responsible for run the whole program.
+
+								This program can be extended to different board games because (a) the size of the board can be changed by the
+  player easily, (b) the method for checking winning conditions is not bound with any specific game class. Instead, it
+  simply checks whether there is a mark consecutively presenting on the current board. (c) The players' information 
+  are stored in the RunGame class, which is not affected by other specific game class. To add more different board 
+  games, we simply need to add more game classes like the TTT, OAC and Connect-4 classes, with minor revisions of 
+  other classes. 
+
+							To allow for another turn-based game, the method for checking winning conditions is moved from the Player 
+  class to the Board class. Besides, two classes are added as two new games. Because Connect-4 has a slightly different
+  rule for players to place their mark, a new method for this game is also added to the Player class.
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
